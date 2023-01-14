@@ -38,13 +38,16 @@ include("./functions/common_function.php");
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> <sub><?php cart_item(); ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="create.php"><i class="fa-solid fa-user"></i> Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> total price:<?php total_cart_price(); ?> /-</a>
           </li>
 
         </ul>

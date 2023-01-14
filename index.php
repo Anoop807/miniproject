@@ -38,13 +38,16 @@ include("./functions/common_function.php");
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+            <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sub><?php cart_item(); ?></sub></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="create.php"><i class="fa-solid fa-user"></i> Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> total price:<?php total_cart_price(); ?> /-</a>
           </li>
 
         </ul>
@@ -68,19 +71,22 @@ include("./functions/common_function.php");
 </div>
 </div>
 </nav>
+<!--cart function-->
+<?php
+cart();
+?>
 <!--tt-->
 <div class="row">
   <div class="col-md-10">
     <!-- products-->
     <div class="row">
       <!-- fetching products -->
-
-      <?php  getproducts(); ?>
       <?php
       //calling function
-     
+      getproducts();
       get_uniqu_categories();
-      get_uniqu_brand()      
+      get_uniqu_brand();
+      $ip = getIPAddress();
       ?>
       <!--row end-->
     </div>

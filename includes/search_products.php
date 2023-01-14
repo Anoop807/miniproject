@@ -55,6 +55,10 @@ include("./functions/common_function.php");
         </form>
       </div>
     </div>
+<!--cart function-->
+<?php
+cart();
+?>
   </nav>
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <ul class="navbar-nav me-auto">
