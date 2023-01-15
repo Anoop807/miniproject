@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,14 @@
     <style>
        .adminimg{
     width: 100px;
-    object-fit: contain
+    object-fit: contain;
+       }
+       body{
+        overflow-x: hidden;
+       }
+       .product_img{
+        width: 30px;
+        object-fit: contain;
        }
     </style>
 </head>
@@ -50,7 +58,7 @@
        <!-- button*10>a.nav-link.text-light.bg-dark.my-1 -->
         <div class="button text-center">
             <button class="my-3"><a href=" insert_product.php" class="nav-link text-light bg-dark my-1">insert product</a></button>
-            <button><a href="" class="nav-link text-light bg-dark my-1">view product</a></button>
+            <button><a href="index.php?view_products" class="nav-link text-light bg-dark my-1">view product</a></button>
             <button><a href="index.php?insert_categories" class="nav-link text-light bg-dark my-1">insert categories </a></button>
             <button><a href="" class="nav-link text-light bg-dark my-1">view categories</a></button>
             <button><a href="index.php?insert_brand" class="nav-link text-light bg-dark my-1">insert brands</a></button>
@@ -73,9 +81,16 @@
     {
         include('insert_brand.php');
     }
+    if(isset($_GET['view_products']))
+    {
+        include('view_products.php');
+    }
     ?>
 </div>
     <!-- bootstrap js link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div>
+    <?php include("../includes/footer.php") ?>
+  </div>
 </body>
 </html>

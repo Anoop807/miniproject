@@ -20,6 +20,7 @@ include("./functions/common_function.php");
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 <div class="conatainer-fluid ">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
