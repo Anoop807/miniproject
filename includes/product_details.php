@@ -11,7 +11,7 @@ include("./functions/common_function.php");
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cart</title>
+  <title>home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -20,8 +20,6 @@ include("./functions/common_function.php");
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  
 <div class="conatainer-fluid ">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -40,16 +38,13 @@ include("./functions/common_function.php");
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sub><?php cart_item(); ?></sub></a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="create.php"><i class="fa-solid fa-user"></i> Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"> total price:<?php total_cart_price(); ?> /-</a>
           </li>
 
         </ul>
@@ -61,6 +56,10 @@ include("./functions/common_function.php");
       </div>
     </div>
   </nav>
+  <!--cart function-->
+<?php
+cart();
+?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <ul class="navbar-nav me-auto">
       <li class="nav-item">
@@ -73,10 +72,6 @@ include("./functions/common_function.php");
 </div>
 </div>
 </nav>
-<!--cart function-->
-<?php
-cart();
-?>
 <!--tt-->
 <div class="row">
   <div class="col-md-10">
@@ -87,8 +82,7 @@ cart();
       //calling function
       getproducts();
       get_uniqu_categories();
-      get_uniqu_brand();
-      $ip = getIPAddress();
+      get_uniqu_brand();      
       ?>
       <!--row end-->
     </div>
