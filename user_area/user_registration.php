@@ -1,5 +1,6 @@
 <?php
 include("../includes/connect.php");
+include("../functions/common_function.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,3 +67,24 @@ include("../includes/connect.php");
     </div>
 </body>
 </html>
+<?php
+if(isset($_POST['user_register']))
+{
+   
+    $user_username=$_POST['user_username'];
+    $user_email=$_POST['user_email'];
+    $user_password=$_POST['user_password'];
+    $conf_user_password=$_POST['conf_user_password'];
+    $user_contact=$_POST['user_contact'];
+    $user_ip=getIPAddress();
+    //insert_quary
+    $insert_query= "INSERT INTO `user_table` (user_name,user_email,user_password,user_ip,user_mobile) VALUES(' $user_username', ' $user_email', '$user_password', '$user_ip','$user_contact')";
+   $sql_execute=mysqli_query($con,$insert_query);
+   if($sql_execute){
+    echo"<script> alert('data insert successfully)</script>";
+   }else{
+    die(mysqli_error($con));
+   }
+
+    }
+?>

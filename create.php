@@ -2,14 +2,16 @@
 session_start();
 $con=mysqli_connect("localhost","root","");
 mysqli_select_db($con,'shoemart');
-if(isset($_POST['sub']))
+if(isset($_POST['user_register']))
 {
    
-    $username=$_POST['username'];
-    $email=$_POST['email'];
-    $passwords=$_POST['passwords'];
-    $mobno=$_POST['mobno'];
-    $reg=mysqli_query($con,"SELECT username FROM signup WHERE username='$username' || mobno='$mobno'");
+    $user_username=$_POST['user_username'];
+    $user_email=$_POST['user_email'];
+    $user_password=$_POST['user_password'];
+    $conf_user_password=$_POST['conf_user_password'];
+    $user_contact=$_POST['user_contact'];
+    $user_ip=getIPAddress();
+    $reg=mysqli_query($con,"SELECT user_table  FROM signup WHERE user_name=' $user_username' || user_mobile='$user_contact'");
     $result=mysqli_fetch_array($reg);
     if($result>0)
     {
@@ -17,7 +19,7 @@ if(isset($_POST['sub']))
     }
     else
     {
-        $query=mysqli_query($con, "INSERT INTO signup(username, email, passwords, mobno) VALUES('$username', '$email', '$passwords', '$mobno')");
+        $query=mysqli_query($con, "INSERT INTO user_table(user_name,user_email,user_ip,user_password,user_mobile) VALUES(' $user_username', ' $user_email', '$user_password', '$user_ip','$user_contact')");
         if($query)
         {
             echo"<script>alert('REGISTERED SUCCESSFULLY')</script>";
