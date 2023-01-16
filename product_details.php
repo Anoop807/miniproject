@@ -41,7 +41,7 @@ include("./functions/common_function.php");
             <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> <sub><?php cart_item(); ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="create.php"><i class="fa-solid fa-user"></i> Register</a>
+            <a class="nav-link" href="./user_area/user_registration.php"><i class="fa-solid fa-user"></i> Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact us</a>
@@ -65,7 +65,7 @@ include("./functions/common_function.php");
         <a class="nav-item nav-link" href="#">Welcome Guest</a>
       </li>
       <li class="nav-item">
-        <a class="nav-item nav-link" href="login.php">Login</a>
+        <a class="nav-item nav-link" href="./user_area/user_login.php">Login</a>
       </li>
     </ul>
 </div>

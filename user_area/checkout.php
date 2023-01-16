@@ -1,5 +1,5 @@
 <?php
-include("./includes/connect.php");
+include("../includes/connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +69,7 @@ include("./includes/connect.php");
         <div class="row">
             <?php
 if(!isset($_SESSION['username'])){
-                include('login.php');
+                include('user_login.php');
 }
 else{
     include('payment.php');
@@ -80,7 +80,7 @@ else{
         <!-- col end -->
     </div>
     </div>
-    <?php include("./includes/footer.php") ?>
+    <?php include("../includes/footer.php") ?>
 </div>
 </body>
 

@@ -47,12 +47,12 @@ include("./functions/common_function.php");
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sub>
+                        <a class="nav-link" href="./user_area/user_registration.php"><i class="fa-solid fa-cart-shopping"></i><sub>
                                 <?php cart_item(); ?>
                             </sub></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="create.php"><i class="fa-solid fa-user"></i> Register</a>
+                        <a class="nav-link" href="./user_area/user_registration.php"><i class="fa-solid fa-user"></i> Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact us</a>
@@ -69,7 +69,7 @@ include("./functions/common_function.php");
                 <a class="nav-item nav-link" href="#">Welcome Guest</a>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link" href="login.php">Login</a>
+                <a class="nav-item nav-link" href="./user_area/user_login.php">Login</a>
             </li>
         </ul>
 </div>
@@ -170,7 +170,7 @@ cart();
                     <input type='submit' value='Continue Shopping' class='nav-link text-light bg-dark px-3 py2 border-0 mx-3 my-4' name='continue_shopping'>
 
                 <button
-                        class='nav-link bg-secondary px-3 py2 border-0 my-4'><a href='checkout.php'
+                        class='nav-link bg-secondary px-3 py2 border-0 my-4'><a href='./user_area/checkout.php'
                         class='text-light text-decoration-none'>Checkout</button>";
                     }
                     else{

@@ -2,7 +2,7 @@
 $con=mysqli_connect("localhost","root","");
 mysqli_select_db($con,'shoemart');
 if($con){
-    echo"";
+    echo"haha";
 }else{
     die('query failed');
 }
