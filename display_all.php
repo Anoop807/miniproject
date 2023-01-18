@@ -2,7 +2,7 @@
 include("./includes/connect.php");
 include("./functions/common_function.php");
 
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@ include("./functions/common_function.php");
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="display_all.php">Products</a>
@@ -60,12 +60,29 @@ include("./functions/common_function.php");
   </nav>
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <ul class="navbar-nav me-auto">
-      <li class="nav-item">
-        <a class="nav-item nav-link" href="#">Welcome Guest</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-item nav-link" href="./user_area/user_login.php">Login</a>
-      </li>
+   
+      <?php
+         if(!isset($_SESSION['user_name'])){
+          echo"   <li class='nav-item'>
+          <a class='nav-item nav-link' href='#'>Welcome</a>
+        </li>";
+      }else{
+        echo"   <li class='nav-item'>
+        <a class='nav-item nav-link' href='#'>Welcome ".$_SESSION['user_name']."</a>
+      </li>";
+      }
+            if(!isset($_SESSION['user_name'])){
+                echo" <li class='nav-item'>
+                <a class='nav-item nav-link' href='./user_area/user_login.php'>Login</a>
+            </li>";
+            }else{
+                echo" <li class='nav-item'>
+                <a class='nav-item nav-link' href='./user_area/logout.php'>Logout</a>
+            </li>"; 
+            }
+            
+            
+            ?>
     </ul>
 </div>
 </div>

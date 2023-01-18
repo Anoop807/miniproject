@@ -63,12 +63,30 @@ session_start();
   </nav>
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <ul class="navbar-nav me-auto">
-      <li class="nav-item">
-        <a class="nav-item nav-link" href="#">Welcome Guest</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-item nav-link" href="./user_area/user_login.php">Login</a>
-      </li>
+      
+      <?php
+      if(!isset($_SESSION['user_name'])){
+        echo"   <li class='nav-item'>
+        <a class='nav-item nav-link' href='#'>Welcome</a>
+      </li>";
+    }else{
+      echo"   <li class='nav-item'>
+      <a class='nav-item nav-link' href='#'>Welcome ".$_SESSION['user_name']."</a>
+    </li>";
+    }
+  
+            if(!isset($_SESSION['user_name'])){
+                echo" <li class='nav-item'>
+                <a class='nav-item nav-link' href='./user_area/user_login.php'>Login</a>
+            </li>";
+            }else{
+                echo" <li class='nav-item'>
+                <a class='nav-item nav-link' href='./user_area/logout.php'>Logout</a>
+            </li>"; 
+            }
+            
+            
+            ?>
     </ul>
 </div>
 </div>
