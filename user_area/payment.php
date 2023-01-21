@@ -27,7 +27,7 @@ session_start();
    // $run_query = mysqli_fetch_array($result);
    // $user_id= $run_query['user_id'];
    $row=mysqli_fetch_array($result);
-    $usr_id=$row[0];
+    $user_id=$row[0];
    //$_SESSION['user_id']=$user_id
 
     ?>
@@ -39,7 +39,7 @@ session_start();
 
             </div>
             <div class="col-md-6">
-                <a href="order.php?user_id=<?php echo $usr_id;?>"><h2 class="text-center">Pay Offline</h2></a>
+                <a href="order.php?user_id=<?php echo $user_id;?>"><h2 class="text-center">Pay Offline</h2></a>
             </div>
         </div>
     </div>

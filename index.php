@@ -39,12 +39,21 @@ session_start();
             <a class="nav-link" href="display_all.php">Products</a>
           </li>
           </li>
+        
           <li class="nav-item">
             <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sub><?php cart_item(); ?></sub></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./user_area/user_registration.php"><i class="fa-solid fa-user"></i> Register</a>
-          </li>
+          <?php
+          if(isset($_SESSION['user_name'])){
+            echo" <li class='nav-item'>
+            <a class='nav-link' href='./user_area/profile.php'><i class='fa-solid fa-user'></i>my account</a>
+          </li>";
+          }else{
+            echo" <li class='nav-item'>
+            <a class='nav-link' href='./user_area/user_registration.php'><i class='fa-solid fa-user'></i>register</a>
+          </li>";
+          }
+          ?>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact us</a>
           </li>
