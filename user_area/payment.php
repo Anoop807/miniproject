@@ -1,6 +1,7 @@
 <?php
 include('../includes/connect.php');
 include('../functions/common_function.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,12 +22,16 @@ include('../functions/common_function.php');
 <body>
     <?php
     $user_ip =getIPAddress();
-    $get_user = "SELECT * FROM `user_table` WHERE user_ip='$user_ip'";
-    $result = mysqli_query($con,$get_user);
-    $run_query = mysqli_fetch_array($result);
-    $user_id= $run_query['user_id'];
+    $get_user = "SELECT user_id FROM `user_table` WHERE user_ip='$user_ip'";
+    $result= mysqli_query($con,$get_user);
+   // $run_query = mysqli_fetch_array($result);
+   // $user_id= $run_query['user_id'];
+   $row=mysqli_fetch_array($result);
+    $usr_id=$row[0];
+   //$_SESSION['user_id']=$user_id
+
     ?>
-    <div class="container">
+    <div class="container"> 
         <h2 class="text-center text-info">payment options</h2>
         <div class="row d-flex jestify-content-center align-items-center my-5">
             <div class="col-md-6">
@@ -34,7 +39,7 @@ include('../functions/common_function.php');
 
             </div>
             <div class="col-md-6">
-                <a href="order.php?user_id=<?php echo $user_id ?>"><h2 class="text-center">Pay Offline</h2></a>
+                <a href="order.php?user_id=<?php echo $usr_id;?>"><h2 class="text-center">Pay Offline</h2></a>
             </div>
         </div>
     </div>

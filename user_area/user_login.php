@@ -38,22 +38,23 @@ include("../functions/common_function.php");
 $select_query_cart="SELECT * FROM `cart_details` WHERE ip_address='$user_ip'";
 $select_cart=mysqli_query($con,$select_query_cart);
 $row_count_cart=mysqli_num_rows($select_cart);
-        if(mysqli_num_rows($result)==0)
-        {
-            echo"<script>alert('INCORRECT USERNAME OR PASSWORD')</script>";
-        }
-        elseif(mysqli_num_rows($result)==1 and $row_count_cart==0)
-        {
-          
-            $_SESSION['user_name']=$username;
-             echo"<script> alert('login successfuly')</script>";
-             echo"<script>window.open('profile.php','_self')</script>";
-          }else{
-            $_SESSION['user_name']=$username;
-             echo"<script> alert('login successfuly')</script>";
-            echo"<script>window.open('payment.php','_self')</script>";
+if(mysqli_num_rows($result)==0)
+{
+    echo"<script>alert('INCORRECT USERNAME OR PASSWORD')</script>";
+}
+elseif(mysqli_num_rows($result)==1 and $row_count_cart==0)
+{
+  
+    $_SESSION['user_name']=$username;
+     echo"<script> alert('login successfuly')</script>";
+     echo"<script>window.open('profile.php','_self')</script>";
+  }else{
+    $_SESSION['user_name']=$username;
+     echo"<script> alert('login successfuly')</script>";
+    echo"<script>window.open('payment.php','_self')</script>";
 
-          }
-        }
+  }
+}
 
+    
     ?>
