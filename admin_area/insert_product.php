@@ -24,7 +24,7 @@ $temp_image3=$_FILES['product_image3']['tmp_name'];
 //checking empty condition
 if($product_name=='' or $description=='' or $product_keywords=='' or $product_categorie=='' or $product_brand=='' or $product_status=='' or $product_image1=='' or $product_image2=='' or $product_image3=='')
 {
-    echo"<script>alert( please fill the entire fields')</script>";
+    echo"<script>alert('please fill the entire fields')</script>";
     exit();
 }else{
     move_uploaded_file($temp_image1,"./product_images/$product_image1");

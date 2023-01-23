@@ -1,4 +1,7 @@
+<?php
+include('../includes/connect.php');
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +27,7 @@
         overflow-x: hidden;
        }
        .product_img{
-        width: 30px;
+        width: 90px;
         object-fit: contain;
        }
     </style>
@@ -60,12 +63,12 @@
             <button class="my-3"><a href=" insert_product.php" class="nav-link text-light bg-dark my-1">insert product</a></button>
             <button><a href="index.php?view_products" class="nav-link text-light bg-dark my-1">view product</a></button>
             <button><a href="index.php?insert_categories" class="nav-link text-light bg-dark my-1">insert categories </a></button>
-            <button><a href="" class="nav-link text-light bg-dark my-1">view categories</a></button>
+            <button><a href="index.php?view_categories" class="nav-link text-light bg-dark my-1">View categories</a></button>
             <button><a href="index.php?insert_brand" class="nav-link text-light bg-dark my-1">insert brands</a></button>
-            <button><a href="" class="nav-link text-light bg-dark my-1">view brands</a></button>
-            <button><a href="" class="nav-link text-light bg-dark my-1"> all orders</a></button>
-            <button><a href="" class="nav-link text-light bg-dark my-1">all payment</a></button>
-            <button><a href="" class="nav-link text-light bg-dark my-1">list users</a></button>
+            <button><a href="index.php?view_brand" class="nav-link text-light bg-dark my-1">view brands</a></button>
+            <button><a href="index.php?list_orders" class="nav-link text-light bg-dark my-1"> all orders</a></button>
+            <button><a href="index.php?list_payments" class="nav-link text-light bg-dark my-1">all payment</a></button>
+            <button><a href="index.php?list_users" class="nav-link text-light bg-dark my-1">list users</a></button>
             <button><a href="" class="nav-link text-light bg-dark my-1"> logout</a></button>
         </div>
     </div>
@@ -84,6 +87,42 @@
     if(isset($_GET['view_products']))
     {
         include('view_products.php');
+    }
+    if(isset($_GET['view_categories']))
+    {
+        include('view_categories.php');
+    }
+    if(isset($_GET['delete_product']))
+    {
+        include('delete_product.php');
+    }
+    if(isset($_GET['view_brand']))
+    {
+        include('view_brand.php');
+    }
+    if(isset($_GET['edit_category']))
+    {
+        include('edit_category.php');
+    }
+    if(isset($_GET['edit_product']))
+    {
+        include('edit_product.php');
+    }
+    if(isset($_GET['edit_brands']))
+    {
+        include('edit_brands.php');
+    }
+    if(isset($_GET['list_orders']))
+    {
+        include('list_orders.php');
+    }
+    if(isset($_GET['list_payments']))
+    {
+        include('list_payments.php');
+    }
+    if(isset($_GET['list_users']))
+    {
+        include('list_users.php');
     }
     ?>
 </div>

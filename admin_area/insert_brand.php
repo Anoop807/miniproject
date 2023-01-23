@@ -2,21 +2,23 @@
 include '../includes/connect.php';
 if(isset($_POST['insert_brand'])){
     $brand_name=$_POST['brand_name'];
-    //select data from database
-$select_query="SELECT * FROM `brands` WHERE brand_name='$brand_name'";
-$result_select=mysqli_query($con,$select_query);
-$number=mysqli_num_rows($result_select);
-if($number>0){
-    echo"<script>alert('this brand is present inside the database')</script>";
-}else{
-
+    // select data from database
+//$select_query="SELECT categorie_name  FROM 'categories' WHERE categorie_name='$categorie_name'";
+//$result_select=mysqli_query($con,$select_query);
+//$number=mysqli_num_rows($result_select);
+//if($number>0)
+//$number=mysqli_fetch_array($result_select);
+//if($number>0)
+//{
+ // echo"<script>alert('this categorie is present inside the database')</script>";
+//}else{
    $insert_query="INSERT INTO brands (brand_name) value ('$brand_name')";
    $result=mysqli_query($con,$insert_query);
   if ($result){
-        echo"<script>alert('brand has been inserted successfully')</script>";
+        echo"<script>alert('brands has been inserted successfully')</script>";
     }
 }
-}
+//}
 ?>
 <h2 class="text-center">insert brands</h2>
 <form action="" method="post" class="mb-2">
