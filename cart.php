@@ -141,7 +141,7 @@ cart();
                                     <td><?php echo $product_name ?></td>
                                     <td><img src="./admin_area/product_images/<?php echo $product_image1 ?>" alt=""
                                             class="cart_imag"></td>
-                                    <td><input type="number" name="qty" class="form-input w-50"></td>
+                                    <td><input type="number" name="qty" class="form-input w-50" min="1" value="1"></td>
                                     <?php
                                     $get_ip_add = getIPAddress();
                                     

@@ -38,7 +38,7 @@ session_start();
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sub><?php cart_item(); ?></a>
+            <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sub><?php cart_item(); ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./user_area/user_registration.php"><i class="fa-solid fa-user"></i> Register</a>

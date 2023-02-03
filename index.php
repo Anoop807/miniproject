@@ -65,7 +65,7 @@ session_start();
 
         <form class="d-flex" action="search_products.php" method="get">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="search" name="search_data">
-          <input type="submit" value="search" class="btn btn-outline-light" name="search_data_product">
+          <input type="submit" value="search" class="btn btn-outline-success" name="search_data_product">
         </form>
       </div>
     </div>

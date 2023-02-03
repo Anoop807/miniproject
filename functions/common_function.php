@@ -8,7 +8,7 @@ function getproducts(){
     // conditon to check isset or not
    if(!isset($_GET['categorie'])){
 
-   if(!isset($_GET['brands'])){
+   if(!isset($_GET['brand'])){
     $select_query="SELECT * FROM `products` order by rand() LIMIT 0,3";
     $result_query=mysqli_query($con,$select_query);
     while($row=mysqli_fetch_assoc($result_query)){
@@ -45,7 +45,7 @@ function get_all_products(){
   // conditon to check isset or not
  if(!isset($_GET['categorie'])){
 
- if(!isset($_GET['brands'])){
+ if(!isset($_GET['brand'])){
   $select_query="SELECT * FROM `products` order by rand()";
   $result_query=mysqli_query($con,$select_query);
   while($row=mysqli_fetch_assoc($result_query)){
@@ -115,41 +115,41 @@ $categorie_id=$_GET['categorie'];
 }
 //geting uniq brand
 function get_uniqu_brand(){
-    global $con;
+  global $con;
 
-    // conditon to check isset or not
-    if(isset($_GET['brand'])){
+  // conditon to check isset or not
+  if(isset($_GET['brand'])){
 $brand_id=$_GET['brand'];
-    
-    $select_query="SELECT * FROM `products` where categorie_id=$brand_id";
-    $result_query=mysqli_query($con,$select_query);
-    $num_of_row=mysqli_num_rows($result_query);
-    if($num_of_row==0){
-        echo"<h2 class='text-center text-danger'>no stock for this brand</h2>";
-    }
-    while($row=mysqli_fetch_assoc($result_query)){
-      $product_id=$row['product_id'];
-      $product_name=$row['product_name'];
-    $product_description=$row['product_description'];
-    $product_image1=$row['product_image1'];
-    $categorie_id=$row['categorie_id'];
-    $brand_id=$row['brand_id'];
-    $product_price=$row['product_price'];
-    
-    echo"<div class='col-md-4 mb-2'>
-    <div class='card' style='width: 18rem'>
-      <img src='./admin_area/product_images/$product_image1' class='card-img-top'  alt='$product_name'>
-      <div class='card-body'>
-        <h5 class='card-title'>$product_name</h5>
-        <p class='card-text'>$product_description</p>
-        <p class='card-text'>price: $product_price /-</p>
-        <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-        <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>view more</a>
-      </div>
+  
+  $select_query="SELECT * FROM `products` where brand_id=$brand_id";
+  $result_query=mysqli_query($con,$select_query);
+  $num_of_row=mysqli_num_rows($result_query);
+  if($num_of_row==0){
+      echo"<h2 class='text-center text-danger'>no stock for this brand</h2>";
+  }
+  while($row=mysqli_fetch_assoc($result_query)){
+    $product_id=$row['product_id'];
+    $product_name=$row['product_name'];
+  $product_description=$row['product_description'];
+  $product_image1=$row['product_image1'];
+  $categorie_id=$row['categorie_id'];
+  $brand_id=$row['brand_id'];
+  $product_price=$row['product_price'];
+  
+  echo"<div class='col-md-4 mb-2'>
+  <div class='card' style='width: 18rem'>
+    <img src='./admin_area/product_images/$product_image1' class='card-img-top'  alt='$product_name'>
+    <div class='card-body'>
+      <h5 class='card-title'>$product_name</h5>
+      <p class='card-text'>$product_description</p>
+      <p class='card-text'>price: $product_price /-</p>
+      <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+      <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>view more</a>
     </div>
-    </div>";
-    
-    }
+  </div>
+  </div>";
+  
+  }
 }
 }
 

@@ -74,6 +74,11 @@ if($product_name=='' or $description=='' or $product_keywords=='' or $product_ca
     <label for="description" class="form-label">product description</label>
     <input type="text" class="form-control" name="description" id="description" placeholder=" enter product description" autocomplete="off" required="required">
   </div>
+  <!-- available options --> 
+  <div class="form-outline mb-4 w-50 m-auto">
+    <label for="size" class="form-label">product description</label>                    
+  </div>
+      <!--ke
       <!--keywords-->
 <div class="form-outline mb-4 w-50 m-auto">
     <label for="product_keywords" class="form-label">product keywords</label>
